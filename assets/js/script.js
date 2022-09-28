@@ -46,16 +46,35 @@ function getCurrentWeather(city) {
 
 function saveSearch() {
   var citiesEntered = $('#city-input').val();
-  citiesDisplay.push(citiesEntered);
+  if (!citiesDisplay.includes(citiesEntered)) {
+    citiesDisplay.push(citiesEntered);
+  }
   localStorage.setItem("searches", JSON.stringify(citiesDisplay));
+  createCityButton();
+}
 
+function createCityButton() {
+  for (var i = 0; i < citiesDisplay.length; i++) {
+    var parentEl = $('.input-container');
+    var cityBtn = $('<button class="button2">').text(citiesDisplay[i])
+    parentEl.append(cityBtn);
+  }
 }
 
 $('#submitBtn').on('click', function(event) {
   event.preventDefault()
+  $('.input-container').empty();
   var searchInput = $('#city-input').val();
   $('.card-container').empty();
   getAPI(searchInput);
   getCurrentWeather(searchInput);
   saveSearch();
+});
+
+$('.input-container').on('click', ".button2", function(event) {
+  event.preventDefault();
+  var searchInput = $(this).text();
+  $('.card-container').empty();
+  getAPI(searchInput);
+  getCurrentWeather(searchInput);
 });
