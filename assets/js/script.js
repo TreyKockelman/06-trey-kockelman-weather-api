@@ -4,7 +4,7 @@ var cardContainer = $('.card-container');
 var citiesDisplay = JSON.parse(localStorage.getItem("searches")) || [];
 
 function appendElements(date, temp, wind, hum) {
-  var parentEl = $("<card>");
+  var parentEl = $("<card class=weather-card>");
   var cardsDate = $("<h3>").text(moment(date).format("L") + " ");
   var cardsTemp = $("<p>").text("Temp: " + temp + "\u00B0F ");
   var cardsWind = $("<p>").text("Wind: " + wind + " ");

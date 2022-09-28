@@ -1,0 +1,18 @@
+header {
+  background-color: rgba(136, 133, 133, 0.61);
+  text-align: center;
+  border-bottom: 3px solid black;
+  margin-bottom: 5px;
+}
+
+.search-label {
+  font-size: 25px;
+}
+
+h3 {
+  border: solid 1px black;
+}
+
+.weather-card {
+  display: inline;
+}
