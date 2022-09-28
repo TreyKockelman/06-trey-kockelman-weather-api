@@ -1,5 +1,6 @@
-const weatherDays = []  
-let currDay = null
+const weatherDays = [];
+let currDay = moment.now();
+var cardContainer = $('.card-container');
 
 
 
@@ -21,18 +22,25 @@ let currDay = null
 // })
 
 function getAPI(city) {
-  fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid=b6d9290b58c34b6ad6a2f5f35449e3ec')
+  fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=imperial&appid=b6d9290b58c34b6ad6a2f5f35449e3ec')
   .then(function (response) {
     return response.json();
   })
   .then(function (data) {
+    for (var i = 3; i < data.list.length; i+=8) {
+    console.log(moment().format('MMM Do YY'));
     console.log(data);
-    })
-  };
+    console.log(data.list[i].dt_txt);
+    console.log(data.list[i].main.temp);
+    console.log(data.list[i].wind.speed);
+    console.log(data.list[i].main.humidity);
+    }
+  });
+}
 
 $('#submitBtn').on('click', function(event) {
   event.preventDefault()
   var searchInput = $('#city-input').val();
-  console.log(searchInput);
+  // console.log(searchInput);
   getAPI(searchInput);
 });
