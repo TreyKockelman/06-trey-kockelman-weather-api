@@ -2,7 +2,7 @@
 
 ## Description
 
-The purpose of this webpage is to give the user a way to track their calendar and input items for the current day. The planner then displays the input items and styles them according to time of the day once saved by the user.
+The purpose of this webpage is to give the user a glimpse at the weather for their current time and the next five days. The main technology implemented in this application is a weather API. There were many different challenges to this webpage. The first challenge being working with multiple APIs and having them both create different elements dynamically. Another challenge was getting the styling for those elements to look different while creating them at the same time with the same funciton.
 
 ## Installation
 
@@ -10,7 +10,7 @@ NA
 
 ## Usage
 
-The use of this page is to provide a daily planner for the user.
+The use of this page is to provide a 5 day forecast for weather in a given city.
 
 ## Credits
 
