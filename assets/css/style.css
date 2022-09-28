@@ -9,10 +9,22 @@ header {
   font-size: 25px;
 }
 
-h3 {
-  border: solid 1px black;
+.card-header {
+  margin-bottom: 3px;
 }
 
-.weather-card {
-  display: inline;
+.card {
+  margin: 15px;
+  outline: solid 1px black;
+}
+
+.button2 {
+  display: block;
+  width: 64.5%;
+  text-align: center;
+  margin-top: 2px;
+}
+
+.col-2 {
+  border-right: solid 1px black;
 }
