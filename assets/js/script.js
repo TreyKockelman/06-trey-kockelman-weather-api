@@ -24,7 +24,7 @@ function getForecast(city) {
     return response.json();
   })
   .then(function (data) {
-    for (var i = 6; i < data.list.length; i+=8) {
+    for (var i = 3; i < data.list.length; i+=8) {
       var date = data.list[i].dt_txt;
       var icon = data.list[i].weather[0].icon;
       var temperature = data.list[i].main.temp;
